@@ -9,8 +9,6 @@
     "pubsub"
   ],
   "dependencies": {
-    "redis": "~0.10.1",
-    "hiredis": "~0.1.15",
     "sockjs": "~0.3.7"
   },
   "devDependencies": {
