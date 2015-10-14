@@ -9,7 +9,8 @@
     "pubsub"
   ],
   "dependencies": {
-    "sockjs": "~0.3.7"
+    "sockjs": "~0.3.7",
+    "sockjs-client": "^1.0.3"
   },
   "devDependencies": {
     "async": "~0.2.9",
