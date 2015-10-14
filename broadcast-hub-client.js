@@ -1,5 +1,5 @@
 (function() {
-  var BroadcastHubClient, SockJS, after, noop, root,
+  var BroadcastHubClient, SockJS, after, noop,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
     __slice = [].slice;
@@ -10,9 +10,7 @@
     return setTimeout(cb, timeout);
   };
 
-  root = this;
-
-  SockJS = root.SockJS;
+  SockJS = typeof window !== "undefined" && window !== null ? require('sockjs-client') : this.SockJS;
 
   if (!SockJS) {
     throw Error('No SockJS found, be sure to include it!');
@@ -241,6 +239,6 @@
 
   })();
 
-  root.BroadcastHubClient = BroadcastHubClient;
+  module.exports = BroadcastHubClient;
 
 }).call(this);

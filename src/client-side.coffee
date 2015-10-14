@@ -2,10 +2,7 @@
 noop = () ->
 after = (timeout, cb) -> setTimeout(cb, timeout)
 
-
-root = @ # In the browser, this will be window
-
-SockJS = root.SockJS
+SockJS = if window? then require 'sockjs-client' else @SockJS
 
 throw Error('No SockJS found, be sure to include it!') if !SockJS
 
@@ -146,4 +143,4 @@ class BroadcastHubClient
             @_channels.push(channel) if channel not in @_channels
             cb()
 
-root.BroadcastHubClient = BroadcastHubClient
+module.exports = BroadcastHubClient
