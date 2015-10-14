@@ -10,7 +10,7 @@
     return setTimeout(cb, timeout);
   };
 
-  root = this;
+  root = typeof window !== "undefined" && window !== null ? window : this;
 
   SockJS = root.SockJS;
 

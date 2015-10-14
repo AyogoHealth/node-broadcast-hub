@@ -2,8 +2,8 @@
 noop = () ->
 after = (timeout, cb) -> setTimeout(cb, timeout)
 
-
-root = @ # In the browser, this will be window
+# we can't assume "this" will be window
+root = if window? then window else @
 
 SockJS = root.SockJS
 
