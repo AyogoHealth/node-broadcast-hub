@@ -12,6 +12,10 @@
 
   SockJS = typeof window !== "undefined" && window !== null ? require('sockjs-client') : this.SockJS;
 
+  if (!SockJS) {
+    throw Error('No SockJS found, be sure to include it!');
+  }
+
   BroadcastHubClient = (function() {
     function BroadcastHubClient(options) {
       this.options = options != null ? options : {};

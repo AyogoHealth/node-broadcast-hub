@@ -4,6 +4,8 @@ after = (timeout, cb) -> setTimeout(cb, timeout)
 
 SockJS = if window? then require 'sockjs-client' else @SockJS
 
+throw Error('No SockJS found, be sure to include it!') if !SockJS
+
 class BroadcastHubClient
     constructor: (@options = {}) ->
         @_listeners = {}
